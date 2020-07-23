@@ -8,7 +8,7 @@ const char* Trojkat::ZleWierzcholki::what() const {
 
 Trojkat::Trojkat(Punkt p1, Punkt p2, Punkt p3) : p1(p1), p2(p2), p3(p3) {
 	const double epsilon = 1e-8;
-	if(p1 == p2 or p1 == p3 or p2 == p3 or (std::abs(p1.getY() / p1.getX() - p2.getY() / p2.getX()) < epsilon and std::abs(p1.getY() / p1.getX() - p3.getY() / p3.getX()) < epsilon)) {
+	if(p1 == p2 or p1 == p3 or p2 == p3 or (std::abs((p2.getX()-p1.getX())*(p3.getY()-p1.getY())-(p2.getY()-p1.getY())*(p3.getX()-p1.getX())) < epsilon)) {
 		throw Trojkat::ZleWierzcholki();
 	}
 }

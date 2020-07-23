@@ -9,6 +9,7 @@ namespace MojeFigury {
 		virtual void rysuj() const = 0;
 		virtual void przesun(double dx, double dy) = 0;
 		virtual void skaluj(double skala) = 0;
+		virtual ~Figura() { };
 
 		class ZlaSkala : public std::exception {
 		private:
